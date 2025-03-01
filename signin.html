@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up Page</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
+    <link rel="stylesheet" href="css/signin.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Fox Logo -->
+        <div id="logo-container"></div>
+
+        <!-- Sign-up Form -->
+        <div class="form-box">
+            <form action="" id="form">
+                <h1 id="form-title">Sign-up</h1>
+                <div class="input-box">
+                    <input type="text" placeholder="Username" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="email" placeholder="Email" required>
+                    <i class='bx bxs-envelope'></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <div class="options">
+                    <label><input type="radio" name="option" value="1"> Creator </label>
+                    <label><input type="radio" name="option" value="2"> User </label>
+                </div>
+                <button type="submit" class="btn" id="submit-btn">Sign-up</button>
+                <p class="social-text">or sign-up with social platforms</p>
+                <div class="social-icons">
+                    <a href="#"><i class='bx bxl-google'></i></a>
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="#"><i class='bx bxl-github'></i></a>
+                    <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+                </div>
+                <p class="toggle-text">Already have an account? <a href="#" class="login-link">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/login.js"></script>
+    <script src="js/signin.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('form');
+            const formTitle = document.getElementById('form-title');
+            const submitBtn = document.getElementById('submit-btn');
+            const loginLink = document.querySelector('.login-link');
+
+            loginLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (formTitle.textContent === 'Sign-up') {
+                    formTitle.textContent = 'Login';
+                    submitBtn.textContent = 'Login';
+                    // Remove additional fields for login
+                    form.querySelectorAll('.input-box')[1].style.display = 'none';
+                    form.querySelector('.options').style.display = 'none';
+                } else {
+                    formTitle.textContent = 'Sign-up';
+                    submitBtn.textContent = 'Sign-up';
+                    // Show additional fields for sign-up
+                    form.querySelectorAll('.input-box')[1].style.display = 'block';
+                    form.querySelector('.options').style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
