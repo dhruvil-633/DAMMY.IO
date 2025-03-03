@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAMMY Community</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header & Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #3498db; /* Blue */
+            padding: 15px 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            gap: 20px;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown button {
+            background: white;
+            color: #3498db;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+
+        .dropdown-content a {
+            color: #3498db;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #2ecc71;
+            color: white;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Search Bar */
+        .search-bar {
+            display: flex;
+            flex-grow: 1;
+            max-width: 500px;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+            overflow: hidden;
+            background: white;
+        }
+
+        .search-bar input {
+            flex-grow: 1;
+            padding: 12px;
+            border: none;
+            background: transparent;
+            color: #333;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .search-bar button {
+            background: #3498db;
+            border: none;
+            padding: 12px 18px;
+            cursor: pointer;
+            transition: 0.3s;
+            color: white;
+            font-weight: bold;
+            background-color: gray;
+        }
+
+        .search-bar button:hover {
+            background: #2ecc71;
+        }
+
+        /* Authentication Links */
+        .auth-links a {
+            text-decoration: none;
+            background-color: white;
+            color: #3498db;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: 0.3s;
+            font-weight: bold;
+            border: 2px solid #3498db;
+        }
+
+        .auth-links a:hover {
+            background-color: #2ecc71;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px;
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            color: white;
+        }
+
+        .hero-text h1 {
+            font-size: 40px;
+        }
+
+        .hero-text button {
+            background-color: white;
+            color: #3498db;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+            font-weight: bold;
+            border: 2px solid #3498db;
+        }
+
+        .hero-text button:hover {
+            background-color: #2ecc71;
+            color: white;
+        }
+
+        .hero-image img {
+            width: 350px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Features Section */
+        .features {
+            text-align: center;
+            padding: 60px;
+            background-color: white;
+        }
+
+        .features-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .feature-box {
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+            transition: 0.3s;
+            font-weight: bold;
+            border: 2px solid #3498db;
+        }
+
+        .feature-box:hover {
+            background: #2ecc71;
+            color: white;
+        }
+
+        /* Join Section */
+        .join {
+            text-align: center;
+            padding: 60px;
+            background-color: #3498db;
+            color: white;
+        }
+
+        .join button {
+            background-color: white;
+            color: #3498db;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+            font-weight: bold;
+            border: 2px solid #3498db;
+        }
+
+        .join button:hover {
+            background-color: #2ecc71;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">DAMMY Community</div>
+        <nav>
+            <div class="dropdown">
+                <button>Categories</button>
+                <div class="dropdown-content">
+                    <a href="#">Discussions</a>
+                    <a href="#">Networking</a>
+                    <a href="#">Workshops</a>
+                    <a href="#">Resources</a>
+                </div>
+            </div>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Search for topics, members...">
+                <button>🔍</button>
+            </div>
+
+            <div class="auth-links">
+                <a href="#">Log in</a>
+                <a href="#">Sign up</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Welcome to Our Community!</h1>
+            <p>Connect, Learn, and Grow Together. Share ideas, discuss topics, and collaborate with like-minded people.</p>
+            <button>Join the Conversation</button>
+        </div>
+        <div class="hero-image">
+            <img src="img1/img1.jpg" alt="Community Illustrations">
+        </div>
+    </section>
+
+    <section class="features">
+        <h2>Why Join Our Community?</h2>
+        <div class="features-container">
+            <div class="feature-box">Engaging Discussions</div>
+            <div class="feature-box">Expert Advice</div>
+            <div class="feature-box">Collaborative Projects</div>
+            <div class="feature-box">Exclusive Resources</div>
+        </div>
+    </section>
+
+    <section class="join">
+        <h2>Be Part of Something Amazing!</h2>
+        <button>Join Now</button>
+    </section>
+
+</body>
+</html>
