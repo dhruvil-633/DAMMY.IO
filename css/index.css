@@ -393,6 +393,49 @@ footer p {
     font-size: 14px;
 }
 
+        /* Profile Logo and Dropdown */
+        .profile-logo {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .profile-logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #3498db;
+        }
+
+        .profile-dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            z-index: 1;
+            padding: 10px;
+        }
+
+        .profile-dropdown a {
+            color: #2c3e50;
+            padding: 8px 12px;
+            text-decoration: none;
+            display: block;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .profile-dropdown a:hover {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .profile-logo:hover .profile-dropdown {
+            display: block;
+        }
+        /* Responsive Styles for Header */
 /* Responsive Styles */
 @media (max-width: 1024px) {
     /* Adjust header for tablets */
@@ -406,6 +449,11 @@ footer p {
 
     .search-bar {
         max-width: 400px;
+    }
+
+    .auth-links a {
+        padding: 8px 12px;
+        font-size: 14px;
     }
 
     .hero {
@@ -458,6 +506,16 @@ footer p {
         gap: 10px;
     }
 
+    .dropdown button {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .profile-logo img {
+        width: 35px;
+        height: 35px;
+    }
+
     .hero-text h1 {
         font-size: 28px;
     }
@@ -500,23 +558,29 @@ footer p {
         font-size: 20px;
     }
 
-    .dropdown button {
-        padding: 8px 12px;
-        font-size: 14px;
-    }
-
     .search-bar input {
-        padding: 10px;
-        font-size: 14px;
+        padding: 8px;
+        font-size: 12px;
     }
 
     .search-bar button {
-        padding: 10px 15px;
+        padding: 8px 12px;
+        font-size: 12px;
     }
 
     .auth-links a {
-        padding: 8px 12px;
-        font-size: 14px;
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    .dropdown button {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    .profile-logo img {
+        width: 30px;
+        height: 30px;
     }
 
     .hero-text h1 {
