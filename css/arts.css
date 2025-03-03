@@ -256,6 +256,8 @@
         }
 
         /* Responsive Design */
+/* Responsive Design for Header, Navbar, and Course Cards */
+
 @media (max-width: 1200px) {
     header {
         padding: 15px 20px;
@@ -282,12 +284,14 @@
     header {
         flex-wrap: wrap;
         gap: 15px;
+        padding: 15px;
     }
 
     nav {
         flex-direction: row;
         flex-wrap: wrap;
         gap: 10px;
+        width: 100%;
     }
 
     .search-bar {
